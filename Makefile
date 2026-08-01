@@ -1,4 +1,4 @@
-.PHONY: analyse audit check dist fix install lint test validate
+.PHONY: analyse audit check coverage dist fix install lint test validate
 
 install:
 	composer install --no-interaction --prefer-dist
@@ -17,6 +17,9 @@ analyse:
 
 test:
 	composer test
+
+coverage:
+	composer coverage
 
 audit:
 	composer audit

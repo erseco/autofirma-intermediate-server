@@ -45,6 +45,7 @@
       "@analyse",
       "@test"
     ],
+    "coverage": "phpunit --configuration=phpunit.xml.dist --coverage-clover=coverage.xml",
     "fix": "phpcbf --standard=.phpcs.xml.dist",
     "lint": "phpcs --standard=.phpcs.xml.dist",
     "test": "phpunit --configuration=phpunit.xml.dist"

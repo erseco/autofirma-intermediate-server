@@ -1,6 +1,7 @@
 # AutoFirma Intermediate Server
 
 [![CI](https://github.com/erseco/autofirma-intermediate-server/actions/workflows/ci.yml/badge.svg)](https://github.com/erseco/autofirma-intermediate-server/actions/workflows/ci.yml)
+[![Codecov](https://codecov.io/gh/erseco/autofirma-intermediate-server/graph/badge.svg)](https://codecov.io/gh/erseco/autofirma-intermediate-server)
 [![Packagist](https://img.shields.io/packagist/v/erseco/autofirma-intermediate-server.svg)](https://packagist.org/packages/erseco/autofirma-intermediate-server)
 [![PHP](https://img.shields.io/packagist/php-v/erseco/autofirma-intermediate-server.svg)](https://packagist.org/packages/erseco/autofirma-intermediate-server)
 [![License](https://img.shields.io/github/license/erseco/autofirma-intermediate-server)](LICENSE)

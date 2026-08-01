@@ -29,3 +29,29 @@ jobs:
       - run: make analyse
       - run: make test
       - run: make audit
+
+  coverage:
+    name: Cobertura
+    runs-on: ubuntu-latest
+    # La matriz corre sin instrumentar para no pagar su coste cuatro veces: la
+    # cobertura se mide una sola vez, y basta con una versión de PHP.
+    permissions:
+      contents: read
+      # Codecov se autentica con OIDC en lugar de con un token guardado como
+      # secreto. Sin este permiso no puede emitirse el identificador.
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: pcov
+          tools: composer:v2
+      - run: make install
+      - run: make coverage
+      - name: Publicar en Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          use_oidc: true
+          files: ./coverage.xml
+          flags: php
