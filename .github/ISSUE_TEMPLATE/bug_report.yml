@@ -1,0 +1,42 @@
+name: Informe de error
+description: Comunica un comportamiento reproducible de la librería.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: No incluyas documentos reales, certificados, claves ni datos personales.
+  - type: input
+    id: version
+    attributes:
+      label: Versión
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: php
+    attributes:
+      label: Versión de PHP
+      placeholder: 8.4.0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Explica qué ocurrió y qué esperabas.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproducción mínima
+      description: Incluye código o peticiones con datos ficticios.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Framework, proxy, almacenamiento y topología relevantes.

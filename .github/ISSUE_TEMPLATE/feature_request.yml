@@ -1,0 +1,24 @@
+name: Propuesta
+description: Propón una mejora compatible con el alcance del proyecto.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Describe el caso de uso, no solo la solución deseada.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibilidad y seguridad
+      description: Indica implicaciones para AutoScript, PHP, almacenamiento o rutas públicas.

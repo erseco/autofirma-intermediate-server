@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+          tools: composer:v2
+      - run: make install
+      - run: make check
+      - name: Verificar tag SemVer
+        run: |
+          if [[ ! "${GITHUB_REF_NAME}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "El tag debe tener forma vX.Y.Z" >&2
+            exit 1
+          fi
+      - run: make dist
+      - name: Verificar archivo Composer
+        run: |
+          ARCHIVE="$(ls artifacts/*.zip)"
+          unzip -l "${ARCHIVE}" | grep -q "composer.json"
+          unzip -l "${ARCHIVE}" | grep -q "src/IntermediateServer.php"
+          if unzip -l "${ARCHIVE}" | grep -q "tests/"; then
+            echo "El archivo no debe incluir tests" >&2
+            exit 1
+          fi
+      - name: Crear GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${GITHUB_REF_NAME}" artifacts/*.zip --generate-notes
