@@ -35,6 +35,10 @@ final class Request
         $parameters = $query;
 
         foreach ($form as $name => $value) {
+            if (!is_string($name)) {
+                continue;
+            }
+
             $parameters[$name] = $value;
         }
 
