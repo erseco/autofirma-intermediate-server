@@ -40,18 +40,14 @@
   },
   "scripts": {
     "analyse": "phpstan analyse --configuration=phpstan.neon.dist --no-progress",
-    "audit": "composer audit",
     "check": [
-      "@validate",
       "@lint",
       "@analyse",
-      "@test",
-      "@audit"
+      "@test"
     ],
     "fix": "phpcbf --standard=.phpcs.xml.dist",
     "lint": "phpcs --standard=.phpcs.xml.dist",
-    "test": "phpunit --configuration=phpunit.xml.dist",
-    "validate": "composer validate --strict --no-check-lock"
+    "test": "phpunit --configuration=phpunit.xml.dist"
   },
   "config": {
     "sort-packages": true

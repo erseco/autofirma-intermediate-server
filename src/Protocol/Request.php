@@ -32,7 +32,13 @@ final class Request
             parse_str($body, $form);
         }
 
-        return new self($method, array_merge($query, $form));
+        $parameters = $query;
+
+        foreach ($form as $name => $value) {
+            $parameters[$name] = $value;
+        }
+
+        return new self($method, $parameters);
     }
 
     public function method(): string
