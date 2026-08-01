@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="AutoFirma Intermediate Server">
+    <description>PSR-12 rules for the AutoFirma intermediate server library.</description>
+
+    <file>src</file>
+    <file>tests</file>
+
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg value="p"/>
+
+    <rule ref="PSR12"/>
+</ruleset>
