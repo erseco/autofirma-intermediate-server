@@ -2,7 +2,10 @@
 
 Este proyecto sigue [Semantic Versioning](https://semver.org/).
 
-## Sin publicar
+## v1.9.3 – 2026-10-15
+
+Primera versión publicada. Su número acompaña a la línea 1.9 de
+`@erseco/autofirma-client` (ADR-0004).
 
 ### Añadido
 

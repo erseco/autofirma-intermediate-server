@@ -35,8 +35,8 @@ El tag debe tener forma `vX.Y.Z`. La persona responsable crea y publica el tag;
 el agente no lo hace automáticamente:
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag v1.9.3
+git push origin v1.9.3
 ```
 
 `release.yml` repite los controles, verifica el tag, genera un archivo con

@@ -15,6 +15,11 @@ AutoFirma.
 > realiza ni valida firmas electrónicas. Solo transporta temporalmente datos
 > opacos que AutoScript y AutoFirma cifran y descifran.
 
+Existe una versión gemela para Node, Bun, Deno y Cloudflare Workers:
+[`@erseco/autofirma-intermediate-server`](https://github.com/erseco/autofirma-intermediate-server-node)
+en npm. Implementa el mismo protocolo y escribe el mismo formato en disco, así
+que las dos pueden compartir el directorio de `FilesystemStore`.
+
 ## Para qué sirve
 
 En dispositivos móviles y en entornos donde la comunicación local mediante

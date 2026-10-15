@@ -75,7 +75,13 @@ estable más reciente cubierta por la matriz.
 ## Releases
 
 - No declares `version` en `composer.json`.
-- Los tags tienen forma `vX.Y.Z` y siguen SemVer.
+- Los tags tienen forma `vX.Y.Z` y siguen SemVer. Mayor y menor acompañan a la
+  línea de AutoFirma de `@erseco/autofirma-client`; el parche es propio
+  (ADR-0004).
+- La versión gemela en TypeScript
+  ([autofirma-intermediate-server-node](https://github.com/erseco/autofirma-intermediate-server-node))
+  publica los mismos números. Un cambio de protocolo, de códigos de error o del
+  formato de `FilesystemStore` se hace en las dos.
 - Una versión publicada no se modifica ni se reutiliza.
 - El tag lo crea una persona, nunca un agente.
 - Packagist obtiene las versiones de los tags mediante su integración con
