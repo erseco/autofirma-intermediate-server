@@ -83,7 +83,9 @@ estable más reciente cubierta por la matriz.
   publica los mismos números. Un cambio de protocolo, de códigos de error o del
   formato de `FilesystemStore` se hace en las dos.
 - Una versión publicada no se modifica ni se reutiliza.
-- El tag lo crea una persona, nunca un agente.
+- Cada tag publicado lleva **siempre** su GitHub Release, con las notas del
+  CHANGELOG y el zip de `make dist`. Si `release.yml` falla, la release se crea
+  igualmente a mano (`gh release create`) en vez de dejar el tag sin ella.
 - Packagist obtiene las versiones de los tags mediante su integración con
   GitHub.
 
