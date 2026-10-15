@@ -64,7 +64,15 @@
       "/CONTRIBUTING.md",
       "/Makefile",
       "/phpstan.neon.dist",
-      "/phpunit.xml.dist"
+      "/phpunit.xml.dist",
+      "/vendor",
+      "/artifacts",
+      "/coverage",
+      "/coverage.xml",
+      "/composer.lock",
+      "/.phpstan-cache",
+      "/.phpunit.cache",
+      "/.phpunit.result.cache"
     ]
   }
 }
